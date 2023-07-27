@@ -4,8 +4,9 @@ const File = () => {
   const [imageInput, setImageInput] = useState("");
   const [nameInput, setNameInput] = useState("");
   const [headlineInput, setHeadlineInput] = useState("");
+  const [selectedInput, setSelectedInput] = useState("");
+  const [locationInput, setLocationInput] = useState("Denver, Colorado");
   const [image, setImage] = useState("");
-
   const [userData, setUserData] = useState([]);
 
   function handleImageChange(e) {
@@ -17,16 +18,44 @@ const File = () => {
     render.readAsDataURL(e.target.files[0]);
   }
 
+  function handleFormReset() {
+    setImageInput("");
+    setNameInput("");
+    setHeadlineInput("");
+    setSelectedInput("");
+    setLocationInput("");
+    setImage("");
+  }
+
   function handleNameChange(e) {
     setNameInput(e.target.value);
+  }
+  function handleSelectedInputChange(e) {
+    setSelectedInput(e.target.value);
   }
   function handleHeadlineChange(e) {
     setHeadlineInput(e.target.value);
   }
-
-  function handleUserFormSubmit(){
-    setUserData([...userData, {name: nameInput, pronouns: }])
+  function handleLocationChange(e) {
+    setLocationInput(e.target.value);
   }
+
+  function handleUserFormSubmit(e) {
+    e.preventDefault();
+    setUserData([
+      ...userData,
+      {
+        name: nameInput,
+        pronouns: selectedInput,
+        headline: headlineInput,
+        location: locationInput,
+        image: image,
+      },
+    ]);
+    handleFormReset();
+  }
+
+  console.log(userData);
 
   return (
     <div>
@@ -41,7 +70,13 @@ const File = () => {
         />
         <br />
         <label htmlFor="selectPronouns">Pronouns</label>
-        <select required name="pronouns" id="selectPronouns">
+        <select
+          value={selectedInput}
+          onChange={handleSelectedInputChange}
+          required
+          name="pronouns"
+          id="selectPronouns"
+        >
           <option value="" hidden>
             Please select
           </option>
@@ -58,6 +93,20 @@ const File = () => {
           type="text"
           id="headline"
         />
+
+        <br />
+
+        <label htmlFor="location">Location:</label>
+        <input
+          onChange={handleLocationChange}
+          value={locationInput}
+          required
+          type="text"
+          id="location"
+        />
+
+        <br />
+
         <input
           type="file"
           required
@@ -66,7 +115,9 @@ const File = () => {
         />
         <br />
         <button type="submit">Submit</button>
-        <button type="reset">Clear</button>
+        <button onClick={handleFormReset} type="reset">
+          Clear
+        </button>
       </form>
     </div>
   );
