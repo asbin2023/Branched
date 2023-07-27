@@ -10,16 +10,22 @@
 }
 
 .navbar-container {
+  background-color: rgb(255, 255, 255);
   display: flex;
   align-items: center;
-  margin-top: 15px;
-  padding: 0 30px;
-  width: 90%;
+  padding: 3px 100px 0px 30px;
+  width: 100%;
+  top: 0;
+  position: sticky;
+  z-index: 99;
 }
 .navbar-container img {
-  margin-right: 10px;
+  margin-right: 17px;
+  cursor: pointer;
 }
 .navbar-container input {
+  outline: none;
+  background-color: #eef3f7;
   height: 32px;
   width: 800px;
   font-size: 18px;
@@ -40,13 +46,18 @@
   height: 30px;
 }
 .navbar-container ul div {
-  height: 52px;
+  cursor: pointer;
+  color: #666666;
+  height: 43px;
   width: 82px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0 10%;
+}
+.navbar-container ul div:hover {
+  color: black;
 }
 
 @media screen and (max-width: 1200px) {
@@ -67,7 +78,7 @@
     display: none;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 620px) {
   .navbar-container ul {
     padding-right: 100px;
     padding-left: 40px;
