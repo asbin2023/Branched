@@ -1,13 +1,17 @@
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { handleSubmit } from "../misc/formSlice";
 
 const File = () => {
+  const userInfo = useSelector((state) => state.form);
+  const disptach = useDispatch();
+
   const [imageInput, setImageInput] = useState("");
   const [nameInput, setNameInput] = useState("");
   const [headlineInput, setHeadlineInput] = useState("");
   const [selectedInput, setSelectedInput] = useState("");
   const [locationInput, setLocationInput] = useState("Denver, Colorado");
   const [image, setImage] = useState("");
-  const [userData, setUserData] = useState([]);
 
   function handleImageChange(e) {
     setImageInput(e.target.files[0]);
@@ -41,21 +45,21 @@ const File = () => {
   }
 
   function handleUserFormSubmit(e) {
-    e.preventDefault();
-    setUserData([
-      ...userData,
-      {
+    disptach(
+      handleSubmit({
         name: nameInput,
         pronouns: selectedInput,
         headline: headlineInput,
         location: locationInput,
         image: image,
-      },
-    ]);
+      })
+    );
+    e.preventDefault();
+
     handleFormReset();
   }
 
-  console.log(userData);
+  console.log(userInfo);
 
   return (
     <div>

@@ -4,11 +4,11 @@ const formSlice = createSlice({
   name: "form",
   initialState: [],
   reducers: {
-    userInfo: (state, action) => {
+    handleSubmit: (state, action) => {
       state.push(action.payload);
     },
   },
 });
 
-export const { userInfo } = formSlice.actions;
+export const { handleSubmit } = formSlice.actions;
 export default formSlice.reducer;
