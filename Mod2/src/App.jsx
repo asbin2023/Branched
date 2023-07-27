@@ -1,10 +1,9 @@
-import Form from "./components/Form";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
     <div>
-      <h1>App</h1>
-      <Form />
+      <Navbar />
     </div>
   );
 };
