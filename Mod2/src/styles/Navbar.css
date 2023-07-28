@@ -87,7 +87,7 @@
 }
 @media screen and (max-width: 620px) {
   .navbar-container ul {
-    padding-right: 100px;
+    padding-right: 65px;
     padding-left: 40px;
   }
   .navbar-container {
