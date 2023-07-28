@@ -6,8 +6,10 @@ const App = () => {
   return (
     <div>
       {/* <Form /> */}
-      {/* <LeftDisplay /> */}
-      <MiddleDisplay />
+      <div className="left-and-middle">
+        <LeftDisplay />
+        <MiddleDisplay />
+      </div>
     </div>
   );
 };

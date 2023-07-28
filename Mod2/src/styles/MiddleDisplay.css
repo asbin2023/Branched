@@ -7,7 +7,7 @@
 
 .middle-form {
   background-color: white;
-  width: 600px;
+  width: 500px;
   border-radius: 10px;
   border: 1px solid rgba(73, 73, 73, 0.055);
 }
@@ -66,4 +66,28 @@
 }
 .middle-three .middle-reset-button .reset-icon {
   margin-right: 5px;
+}
+
+@media screen and (max-width: 800px) {
+  .middle-form {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .middle-form {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .middle-form {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .middle-form {
+    width: 100%;
+  }
 }

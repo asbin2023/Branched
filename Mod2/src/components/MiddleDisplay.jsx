@@ -16,9 +16,18 @@ const MiddleDisplay = () => {
   }
   function handleFormSubmit(e) {
     e.preventDefault();
-    setFeed([...feed, input]);
-    console.log(feed)
-    setInput('')
+    setFeed([
+      ...feed,
+      {
+        content: input,
+        image: image,
+        name: userInfo[0].name,
+        headline: userInfo[0].headline,
+        profilePic: userInfo[0].image,
+      },
+    ]);
+    console.log(feed);
+    setInput("");
   }
   console.log(feed);
   function handleImageChange(e) {
@@ -37,42 +46,52 @@ const MiddleDisplay = () => {
   }
 
   return (
-    <div>
-      <form className="middle-form" onSubmit={handleFormSubmit}>
-        <div className="middle-image-input">
-          <img src={userInfo[0]?.image} />
-          <input
-            value={input}
-            type="text"
-            required
-            placeholder="Start a post"
-            onChange={handleInputChange}
-          />
-        </div>
-        <div className="middle-three">
-          <button type="submit">Post</button>
-          <label htmlFor="middle-file-upload" className="middle-file-upload">
-            {" "}
-            <HiOutlinePhotograph className="photo-icon" />
-            Photo
-          </label>
-          <input
-            style={{ display: "none" }}
-            id="middle-file-upload"
-            type="file"
-            accept="image/*"
-            onChange={handleImageChange}
-          />
-          <button
-            type="reset"
-            className="middle-reset-button"
-            onClick={handleReset}
-          >
-            <GrPowerReset className="reset-icon" /> Reset
-          </button>
-        </div>
-      </form>
-    </div>
+    userInfo[0]?.name && (
+      <div>
+        <form className="middle-form" onSubmit={handleFormSubmit}>
+          <div className="middle-image-input">
+            <img src={userInfo[0]?.image} />
+            <input
+              value={input}
+              type="text"
+              required
+              placeholder="Start a post"
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="middle-three">
+            <button type="submit">Post</button>
+            <label htmlFor="middle-file-upload" className="middle-file-upload">
+              {" "}
+              <HiOutlinePhotograph className="photo-icon" />
+              Photo
+            </label>
+            <input
+              style={{ display: "none" }}
+              id="middle-file-upload"
+              type="file"
+              accept="image/*"
+              onChange={handleImageChange}
+            />
+            <button
+              type="reset"
+              className="middle-reset-button"
+              onClick={handleReset}
+            >
+              <GrPowerReset className="reset-icon" /> Reset
+            </button>
+          </div>
+        </form>
+        <main>
+          <div>
+            {feed.length > 0 &&
+              feed.map((item) => {
+                return <div key={item.name}>{item.content}</div>;
+              })}
+          </div>
+        </main>
+      </div>
+    )
   );
 };
 
