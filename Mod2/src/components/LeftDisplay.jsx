@@ -1,11 +1,12 @@
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import { CiCircleRemove } from "react-icons/ci";
 import "../styles/LeftDisplay.css";
+
 const LeftDisplay = () => {
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
   const userData = useSelector((state) => state.form);
-  console.log(userData);
   function handleInputChange(e) {
     setInput(e.target.value);
   }
@@ -14,10 +15,17 @@ const LeftDisplay = () => {
     setTodos([...todos, input]);
     setInput("");
   }
+  function handleDelete(todoIndex) {
+    let tempTodos = [...todos];
+    tempTodos.splice(todoIndex, 1);
+
+    setTodos(tempTodos);
+  }
   function handleReset() {
     setInput("");
     setTodos("");
   }
+
   return (
     userData.length > 0 && (
       <div>
@@ -39,34 +47,44 @@ const LeftDisplay = () => {
 
           <h1>{userData[0].name}</h1>
           <h2>{userData[0].headline}</h2>
-
-          <hr />
         </div>
-        <div>
+        <div className="middle-todo">
           <form onSubmit={handleFormSubmit}>
-            <label htmlFor="note-to-self">Note to self:</label>
-            <br />
             <input
+              placeholder="Note to self..."
+              minLength={2}
+              maxLength={18}
               required
               type="text"
               id="note-to-self"
               value={input}
               onChange={handleInputChange}
             />
-            <button type="submit">Submit</button>
-            <button onClick={handleReset} type="reset">
-              Reset
-            </button>
+            <div className="the-two-buttons">
+              <button className="submit-btn" type="submit">
+                Submit
+              </button>
+              <button className="reset-btn" onClick={handleReset} type="reset">
+                {" "}
+                Clear
+              </button>
+            </div>
           </form>
-          <div>
-            <ul>
-              {todos.length > 0 &&
-                todos.map((todo, index) => {
-                  return <li key={index}>{todo}</li>;
-                })}
-            </ul>
-          </div>
         </div>
+        <ul className="map-todo">
+          {todos.length > 0 &&
+            todos.map((todo, index) => {
+              return (
+                <li key={index}>
+                  {todo}
+                  <CiCircleRemove
+                    className="delete-todo"
+                    onClick={() => handleDelete(index)}
+                  />
+                </li>
+              );
+            })}
+        </ul>
       </div>
     )
   );

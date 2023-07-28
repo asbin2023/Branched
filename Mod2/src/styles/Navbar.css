@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@500&display=swap");
-
+/* color: #939393 */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -47,6 +47,10 @@
 .navbar-container ul div .icon {
   width: 30px;
   height: 30px;
+}
+.navbar-container ul div .icon:hover {
+  transition: 0.15s ease-in-out;
+  transform: scale(1.1);
 }
 .navbar-container ul div {
   cursor: pointer;
