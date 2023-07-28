@@ -28,13 +28,13 @@ const LeftDisplay = () => {
 
   return (
     userData.length > 0 && (
-      <div>
+      <div className="main-left-container">
         <div className="left-container">
           <img
             className="bg-img"
             src={userData[0].background}
             alt="header for the user"
-            width={225}
+            width={240}
             height={56}
           />
           <img

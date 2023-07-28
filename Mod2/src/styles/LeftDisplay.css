@@ -1,14 +1,12 @@
 .left-container {
-  width: 225px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-left: 200px;
-  margin-top: 50px;
 
+  margin-top: 50px;
   background-color: white;
   padding-bottom: 20px;
 }
@@ -34,8 +32,7 @@
 
 .middle-todo {
   background-color: rgb(255, 255, 255);
-  width: 225px;
-  margin-left: 200px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,7 +56,7 @@
   cursor: pointer;
   margin-bottom: 20px;
   border: none;
-  padding: 3px 5px 5px 3px;
+  padding: 7px;
   border-radius: 5px;
   box-shadow: 0.5px 0.3px 1px rgba(0, 0, 0, 0.162);
 }
@@ -76,8 +73,7 @@
 }
 .map-todo {
   position: relative;
-  margin-left: 200px;
-  width: 225px;
+
   background-color: white;
   padding-bottom: 100px;
 }
@@ -103,4 +99,8 @@
 .map-todo li:hover .delete-todo {
   transition: 0.15s 0.02s;
   transform: scale(1.2);
+}
+
+.main-left-container {
+  width: 240px;
 }
