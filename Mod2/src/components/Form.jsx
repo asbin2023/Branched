@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { handleSubmit } from "../misc/formSlice";
+import background from "../images/background.jpeg";
 
 const File = () => {
   const userInfo = useSelector((state) => state.form);
@@ -52,14 +53,13 @@ const File = () => {
         headline: headlineInput,
         location: locationInput,
         image: image,
+        background: background,
       })
     );
     e.preventDefault();
 
     handleFormReset();
   }
-
-  console.log(userInfo);
 
   return (
     <div>

@@ -1,0 +1,29 @@
+.left-container {
+  width: 225px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 300px;
+  background-color: white;
+  padding-bottom: 20px;
+}
+.left-container h1 {
+  padding-top: 57px;
+  font-size: 16px;
+}
+.left-container h2 {
+  font-size: 12px;
+}
+.left-container .bg-img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.left-container .headshot-img {
+  margin-bottom: 43px;
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid white;
+}
