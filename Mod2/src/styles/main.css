@@ -8,13 +8,14 @@
   padding-top: 2%;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
   .left-and-middle {
-    padding: 1%;
+    padding: 10%;
+    padding-top: 2%;
   }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 650px) {
   .left-and-middle {
     padding: 5%;
     flex-direction: column;
