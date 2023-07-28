@@ -34,7 +34,7 @@ const LeftDisplay = () => {
             className="bg-img"
             src={userData[0].background}
             alt="header for the user"
-            width={240}
+            width={225}
             height={56}
           />
           <img

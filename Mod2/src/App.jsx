@@ -5,7 +5,7 @@ import MiddleDisplay from "./components/MiddleDisplay";
 const App = () => {
   return (
     <div>
-      {/* <Form /> */}
+      <Form />
       <div className="left-and-middle">
         <LeftDisplay />
         <MiddleDisplay />

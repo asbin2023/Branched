@@ -3,6 +3,7 @@ import { useState } from "react";
 import { HiOutlinePhotograph } from "react-icons/hi";
 import { GrPowerReset } from "react-icons/gr";
 import "../styles/MiddleDisplay.css";
+import { LiaGlobeAmericasSolid } from "react-icons/lia";
 
 const MiddleDisplay = () => {
   const userInfo = useSelector((state) => state.form);
@@ -14,20 +15,45 @@ const MiddleDisplay = () => {
   function handleInputChange(e) {
     setInput(e.target.value);
   }
+  function randomTime() {
+    let arr = [
+      "1h",
+      "1w",
+      "1d",
+      "2d",
+      "3d",
+      "4d",
+      "2h",
+      "3h",
+      "5h",
+      "2w",
+      "3w",
+      "6h",
+      "7h",
+      "2w",
+      "3w",
+      "4w",
+    ];
+    let num = Math.floor(Math.random() * arr.length);
+    return num;
+  }
   function handleFormSubmit(e) {
     e.preventDefault();
     setFeed([
-      ...feed,
       {
         content: input,
         image: image,
         name: userInfo[0].name,
         headline: userInfo[0].headline,
         profilePic: userInfo[0].image,
+        date: randomTime(),
       },
+      ...feed,
     ]);
     console.log(feed);
     setInput("");
+    setImageInput("");
+    setImage("");
   }
   console.log(feed);
   function handleImageChange(e) {
@@ -86,7 +112,34 @@ const MiddleDisplay = () => {
           <div>
             {feed.length > 0 &&
               feed.map((item) => {
-                return <div key={item.name}>{item.content}</div>;
+                return (
+                  <div className="post-card" key={item.name}>
+                    <div className="first-post-card">
+                      <img
+                        src={item.profilePic}
+                        height={48}
+                        width={48}
+                        alt="profile pic"
+                      />
+                      <div>
+                        <h1>{item.name}</h1>
+                        <h2>{item.headline}</h2>
+                        <h2>
+                          {item.date} &#183; <LiaGlobeAmericasSolid />
+                        </h2>
+                      </div>
+                    </div>
+                    <p>{item.content}</p>
+                    {item.image && (
+                      <img
+                        width={555}
+                        height="auto"
+                        src={item.image}
+                        alt="random img"
+                      />
+                    )}
+                  </div>
+                );
               })}
           </div>
         </main>
