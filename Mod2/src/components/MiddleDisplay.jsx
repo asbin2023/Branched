@@ -4,6 +4,10 @@ import { HiOutlinePhotograph } from "react-icons/hi";
 import { GrPowerReset } from "react-icons/gr";
 import "../styles/MiddleDisplay.css";
 import { LiaGlobeAmericasSolid } from "react-icons/lia";
+import { AiOutlineLike } from "react-icons/ai";
+import { FaRegCommentDots } from "react-icons/fa";
+import { AiOutlineRetweet } from "react-icons/ai";
+import { BiShare } from "react-icons/bi";
 
 const MiddleDisplay = () => {
   const userInfo = useSelector((state) => state.form);
@@ -93,7 +97,7 @@ const MiddleDisplay = () => {
               Photo
             </label>
             <input
-              disabled
+              disabled={image ? true : false}
               style={{ display: "none" }}
               id="middle-file-upload"
               type="file"
@@ -133,14 +137,39 @@ const MiddleDisplay = () => {
                     <div className="second-post-card">
                       <p>{item.content}</p>
 
-                      {item.image && (
-                        <img
-                          width={555}
-                          height="auto"
-                          src={item.image}
-                          alt="random img"
-                        />
-                      )}
+                      {item.image && <img src={item.image} alt="random img" />}
+                    </div>
+                    <hr className="middle-hr" />
+                    <div className="third-post-card">
+                      <div>
+                        <p>
+                          {" "}
+                          <AiOutlineLike />
+                        </p>
+
+                        <p>Like</p>
+                      </div>
+                      <div>
+                        <p>
+                          {" "}
+                          <FaRegCommentDots />{" "}
+                        </p>
+                        <p>Comment</p>
+                      </div>
+                      <div>
+                        <p>
+                          {" "}
+                          <AiOutlineRetweet />
+                        </p>{" "}
+                        <p>Repost</p>
+                      </div>
+                      <div>
+                        <p>
+                          {" "}
+                          <BiShare />
+                        </p>{" "}
+                        <p>Share</p>
+                      </div>
                     </div>
                   </div>
                 );
