@@ -35,7 +35,7 @@ const MiddleDisplay = () => {
       "4w",
     ];
     let num = Math.floor(Math.random() * arr.length);
-    return num;
+    return arr[num];
   }
   function handleFormSubmit(e) {
     e.preventDefault();
@@ -93,6 +93,7 @@ const MiddleDisplay = () => {
               Photo
             </label>
             <input
+              disabled
               style={{ display: "none" }}
               id="middle-file-upload"
               type="file"
@@ -129,15 +130,18 @@ const MiddleDisplay = () => {
                         </h2>
                       </div>
                     </div>
-                    <p>{item.content}</p>
-                    {item.image && (
-                      <img
-                        width={555}
-                        height="auto"
-                        src={item.image}
-                        alt="random img"
-                      />
-                    )}
+                    <div className="second-post-card">
+                      <p>{item.content}</p>
+
+                      {item.image && (
+                        <img
+                          width={555}
+                          height="auto"
+                          src={item.image}
+                          alt="random img"
+                        />
+                      )}
+                    </div>
                   </div>
                 );
               })}
