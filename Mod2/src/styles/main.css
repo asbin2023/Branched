@@ -4,13 +4,19 @@
 
 .left-and-middle {
   display: flex;
-  padding: 15%;
+  padding: 14%;
   padding-top: 2%;
+}
+@media screen and (max-width: 1400px) {
+  .left-and-middle {
+    padding: 10%;
+    padding-top: 2%;
+  }
 }
 
 @media screen and (max-width: 1000px) {
   .left-and-middle {
-    padding: 10%;
+    padding: 7%;
     padding-top: 2%;
   }
 }
