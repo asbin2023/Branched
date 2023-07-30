@@ -11,7 +11,7 @@
   border-radius: 10px;
   border: 1px solid rgba(73, 73, 73, 0.055);
   margin-bottom: 5%;
-  padding: 20px;
+  padding: 18px;
 }
 
 .middle-image-input img {
@@ -30,6 +30,7 @@
   border: 1px solid rgba(128, 128, 128, 0.747);
 }
 .middle-three {
+  margin-top: 6px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -95,6 +96,9 @@
   border: 2px solid white;
   margin-right: 5px;
 }
+.first-post-card {
+  position: relative;
+}
 
 .first-post-card div h1 {
   font-size: 14px;
@@ -106,6 +110,19 @@
   color: rgba(0, 0, 0, 0.6);
 }
 
+.first-post-card div .post-trash {
+  display: none;
+  font-size: 17px;
+  position: absolute;
+  right: 15px;
+  top: 13px;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.731);
+}
+
+.post-card:hover .post-trash {
+  display: block;
+}
 .second-post-card {
   font-size: 14px;
   font-weight: 100;
@@ -203,5 +220,8 @@
   .middle-three button,
   .middle-three label {
     font-size: 12px;
+  }
+  .first-post-card div .post-trash {
+    font-size: 13px;
   }
 }

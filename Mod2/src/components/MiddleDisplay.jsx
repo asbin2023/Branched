@@ -9,6 +9,7 @@ import { AiFillLike } from "react-icons/ai";
 import { FaRegCommentDots } from "react-icons/fa";
 import { AiOutlineRetweet } from "react-icons/ai";
 import { BiShare } from "react-icons/bi";
+import { BsTrash3 } from "react-icons/bs";
 
 const MiddleDisplay = () => {
   const userInfo = useSelector((state) => state.form);
@@ -19,6 +20,13 @@ const MiddleDisplay = () => {
 
   function handleInputChange(e) {
     setInput(e.target.value);
+  }
+  function handlePostDelete(id) {
+    setFeed(
+      feed.filter((item) => {
+        return item.id !== id;
+      })
+    );
   }
   function handleLiked(id) {
     setFeed(
@@ -142,6 +150,12 @@ const MiddleDisplay = () => {
                       <div>
                         <h1>{item.name}</h1>
                         <h2>{item.headline}</h2>
+                        <h2
+                          className="post-trash"
+                          onClick={() => handlePostDelete(item.id)}
+                        >
+                          <BsTrash3 />
+                        </h2>
                         <h2>
                           {item.date} &#183; <LiaGlobeAmericasSolid />
                         </h2>
