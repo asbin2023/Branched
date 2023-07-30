@@ -5,6 +5,7 @@ import { GrPowerReset } from "react-icons/gr";
 import "../styles/MiddleDisplay.css";
 import { LiaGlobeAmericasSolid } from "react-icons/lia";
 import { AiOutlineLike } from "react-icons/ai";
+import { AiFillLike } from "react-icons/ai";
 import { FaRegCommentDots } from "react-icons/fa";
 import { AiOutlineRetweet } from "react-icons/ai";
 import { BiShare } from "react-icons/bi";
@@ -18,6 +19,16 @@ const MiddleDisplay = () => {
 
   function handleInputChange(e) {
     setInput(e.target.value);
+  }
+  function handleLiked(id) {
+    setFeed(
+      feed.map((item) => {
+        if (item.id === id) {
+          return { ...item, liked: !item.liked };
+        }
+        return item;
+      })
+    );
   }
   function randomTime() {
     let arr = [
@@ -45,21 +56,23 @@ const MiddleDisplay = () => {
     e.preventDefault();
     setFeed([
       {
+        id: crypto.randomUUID(),
         content: input,
         image: image,
         name: userInfo[0].name,
         headline: userInfo[0].headline,
         profilePic: userInfo[0].image,
         date: randomTime(),
+        liked: false,
       },
       ...feed,
     ]);
-    console.log(feed);
+
     setInput("");
     setImageInput("");
     setImage("");
   }
-  console.log(feed);
+
   function handleImageChange(e) {
     setImageInput(e.target.files[0]);
     const render = new FileReader();
@@ -118,7 +131,7 @@ const MiddleDisplay = () => {
             {feed.length > 0 &&
               feed.map((item) => {
                 return (
-                  <div className="post-card" key={item.name}>
+                  <div className="post-card" key={item.id}>
                     <div className="first-post-card">
                       <img
                         src={item.profilePic}
@@ -141,13 +154,9 @@ const MiddleDisplay = () => {
                     </div>
                     <hr className="middle-hr" />
                     <div className="third-post-card">
-                      <div>
-                        <p>
-                          {" "}
-                          <AiOutlineLike />
-                        </p>
-
-                        <p>Like</p>
+                      <div onClick={() => handleLiked(item.id)}>
+                        <p>{item.liked ? <AiFillLike /> : <AiOutlineLike />}</p>
+                        <p>{item.liked ? "Unlike" : "Like"}</p>
                       </div>
                       <div>
                         <p>
