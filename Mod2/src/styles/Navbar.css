@@ -74,6 +74,10 @@
 }
 
 @media screen and (max-width: 850px) {
+  .navbar-container img {
+  margin-right: 1px;
+
+}
   .navbar-container {
     margin-top: 10px;
   }
@@ -92,5 +96,12 @@
   }
   .navbar-container {
     padding-left: 15px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+
+  .navbar-container img{
+    margin-right: 10px;
   }
 }

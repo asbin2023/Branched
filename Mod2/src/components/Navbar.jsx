@@ -9,7 +9,7 @@ import "../styles/Navbar.css";
 const Navbar = () => {
   return (
     <nav className="navbar-container">
-      <img src={logo} width={34.17} height={34.17} alt="linkedin logo" />
+      <img src={logo} width={54.17} height={34.17} alt="linkedin logo" />
 
       <input type="text" placeholder="&#128269; Search" />
       <ul>
