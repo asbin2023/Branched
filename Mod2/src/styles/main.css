@@ -3,25 +3,26 @@
   min-height: 100vh;
   scroll-behavior: smooth;
 }
-.black{
-  background-color: red;
-}
-.left-and-middle {
 
+
+
+.left-and-middle {
+  max-width: 2000px;
   display: flex;
   padding: 14%;
-  padding-top:2%;
+  padding-top: 2%;
+  border: 2px solid black;
 }
+
 @media screen and (max-width: 1400px) {
   .left-and-middle {
     padding: 10%;
     padding-top: 2%;
   }
 }
+
 @media screen and (max-width: 1200px) {
-  .black{
-    background-color: red;
-  }
+ 
 }
 
 @media screen and (max-width: 1000px) {
