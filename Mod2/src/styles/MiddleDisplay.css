@@ -114,8 +114,8 @@
   display: none;
   font-size: 17px;
   position: absolute;
-  right: 15px;
-  top: 13px;
+  right: 20px;
+  top: 15px;
   cursor: pointer;
   color: rgba(0, 0, 0, 0.731);
 }
@@ -162,31 +162,37 @@
   background-color: #ebebeb;
 }
 
+.middle-form,
+.post-card {
+  margin-left: 48%;
+}
 @media screen and (max-width: 850px) {
   .middle-form,
   .post-card {
     width: 510px;
   }
 }
-@media screen and (max-width: 805px) {
+@media screen and (max-width: 810px) {
   .middle-form,
   .post-card {
     width: 470px;
+    margin-left: 55%;
   }
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 760px) {
   .middle-form,
   .post-card {
     width: 435px;
   }
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 730px) {
   .middle-form,
   .post-card {
     width: 400px;
+    margin-left: 58%;
   }
 }
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 680px) {
   .middle-form,
   .post-card {
     width: 380px;
@@ -197,6 +203,7 @@
   .middle-form,
   .post-card {
     width: 100%;
+    margin-left: 0;
   }
 }
 

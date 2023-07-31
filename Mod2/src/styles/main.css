@@ -1,11 +1,14 @@
 .app {
   background: #f3f2ef;
+  min-height: 100vh;
+  scroll-behavior: smooth;
 }
 
 .left-and-middle {
+
   display: flex;
   padding: 14%;
-  padding-top: 2%;
+  padding-top:2%;
 }
 @media screen and (max-width: 1400px) {
   .left-and-middle {
@@ -16,7 +19,7 @@
 
 @media screen and (max-width: 1000px) {
   .left-and-middle {
-    padding: 7%;
+    padding: 3%;
     padding-top: 2%;
   }
 }
