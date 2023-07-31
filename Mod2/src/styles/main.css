@@ -4,14 +4,12 @@
   scroll-behavior: smooth;
 }
 
-
-
 .left-and-middle {
-  max-width: 2000px;
+  max-width: 1700px;
   display: flex;
   padding: 14%;
   padding-top: 2%;
-  border: 2px solid black;
+
 }
 
 @media screen and (max-width: 1400px) {
@@ -21,9 +19,14 @@
   }
 }
 
-@media screen and (max-width: 1200px) {
- 
+@media screen and (max-width: 1100px) {
+  .left-and-middle {
+    padding: 7%;
+    padding-top: 2%;
+  }
 }
+
+
 
 @media screen and (max-width: 1000px) {
   .left-and-middle {

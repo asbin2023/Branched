@@ -21,6 +21,7 @@
   border: 2px solid white;
   margin-right: 8px;
 }
+
 .middle-image-input input {
   padding-left: 16px;
   width: 100%;
@@ -29,19 +30,23 @@
   outline: none;
   border: 1px solid rgba(128, 128, 128, 0.747);
 }
+
 .middle-three {
   margin-top: 6px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
+
 .middle-three label {
   display: flex;
   align-items: center;
 }
+
 .middle-three label .photo-icon {
   margin-right: 5px;
 }
+
 .middle-three button,
 .middle-three label {
   font-weight: bold;
@@ -67,6 +72,7 @@
   display: flex;
   align-items: center;
 }
+
 .middle-three .middle-reset-button .reset-icon {
   margin-right: 5px;
 }
@@ -96,6 +102,7 @@
   border: 2px solid white;
   margin-right: 5px;
 }
+
 .first-post-card {
   position: relative;
 }
@@ -104,6 +111,7 @@
   font-size: 14px;
   font-weight: bold;
 }
+
 .first-post-card div h2 {
   font-size: 12px;
   font-weight: 100;
@@ -123,15 +131,18 @@
 .post-card:hover .post-trash {
   display: block;
 }
+
 .second-post-card {
   font-size: 14px;
   font-weight: 100;
   color: rgba(0, 0, 0, 0.79);
   padding: 0px 16px 10px 16px;
 }
+
 .second-post-card p {
   padding-bottom: 10px;
 }
+
 .second-post-card img {
   width: 100%;
   max-height: 500px;
@@ -144,6 +155,7 @@
   font-size: 14px;
   padding: 0px 15px;
 }
+
 .third-post-card div {
   width: 100%;
   padding: 10px;
@@ -152,9 +164,11 @@
   color: rgb(95, 94, 94);
   cursor: pointer;
 }
+
 .third-post-card div p {
   padding: 0px 2px;
 }
+
 .third-post-card div:hover {
   color: rgb(0, 0, 0);
 
@@ -166,33 +180,62 @@
 .post-card {
   margin-left: 48%;
 }
-@media screen and (max-width: 850px) {
+
+@media screen and (max-width: 1200px) {
+
   .middle-form,
   .post-card {
-    width: 510px;
+    width: 500px;
+    margin-left: 52%;
   }
 }
+
+@media screen and (max-width: 1100px) {
+
+  .middle-form,
+  .post-card {
+    width: 450px;
+  }
+  
+}
+
+@media screen and (max-width: 1000px) {
+
+  .middle-form,
+  .post-card {
+    width: 380px;
+
+  }
+}
+
 @media screen and (max-width: 810px) {
+
   .middle-form,
   .post-card {
     width: 470px;
     margin-left: 55%;
   }
 }
+
 @media screen and (max-width: 760px) {
+
   .middle-form,
   .post-card {
     width: 435px;
   }
 }
+
 @media screen and (max-width: 730px) {
+
   .middle-form,
   .post-card {
     width: 400px;
     margin-left: 58%;
   }
 }
+
 @media screen and (max-width: 680px) {
+
   .middle-form,
   .post-card {
     width: 380px;
@@ -200,6 +243,7 @@
 }
 
 @media screen and (max-width: 650px) {
+
   .middle-form,
   .post-card {
     width: 100%;
@@ -215,19 +259,24 @@
   .first-post-card div h1 {
     font-size: 12px;
   }
+
   .first-post-card div h2 {
     font-size: 10px;
   }
+
   .third-post-card {
     font-size: 10px;
   }
+
   .second-post-card {
     font-size: 12px;
   }
+
   .middle-three button,
   .middle-three label {
     font-size: 12px;
   }
+
   .first-post-card div .post-trash {
     font-size: 13px;
   }
