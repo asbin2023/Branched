@@ -1,0 +1,36 @@
+.form-display {
+  background-color: white;
+  padding-top: 70px;
+  border: 2px solid purple;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 70%;
+  padding-left: 30px;
+  align-items: center;
+}
+.form-display form {
+  border: 1px solid black;
+  display: flex;
+  width: 600px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-display form input,
+.form-display form select {
+  height: 30px;
+  width: 50%;
+  outline: none;
+}
+.form-display form button {
+  width: 50%;
+  padding: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.form-display label {
+  margin-bottom: 10px;
+}
+

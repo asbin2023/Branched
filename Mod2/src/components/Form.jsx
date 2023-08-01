@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { handleSubmit } from "../misc/formSlice";
 import { useNavigate } from "react-router-dom";
+import "../styles/Form.css";
 
 const File = () => {
   const navigate = useNavigate();
@@ -64,7 +65,10 @@ const File = () => {
   }
 
   return (
-    <div>
+    <div className="form-display">
+      <div>
+        <h1>Welcome to Branched, Let's get Branching!</h1>
+      </div>
       <form onSubmit={handleUserFormSubmit} action="">
         <label htmlFor="name">Full Name:</label>
         <input
@@ -75,7 +79,7 @@ const File = () => {
           id="name"
         />
         <br />
-        <label htmlFor="selectPronouns">Pronouns</label>
+        <label htmlFor="selectPronouns">Pronouns:</label>
         <select
           value={selectedInput}
           onChange={handleSelectedInputChange}
@@ -89,6 +93,12 @@ const File = () => {
           <option value="She/Her">She/Her</option>
           <option value="He/Him">He/Him</option>
           <option value="They/Them">They/Them</option>
+          <option value="Ze/Zir">Ze/Zir</option>
+          <option value="Xe/Xem">Xe/Xem</option>
+          <option value="Ve/Ver">Ve/Ver</option>
+          <option value="Ne/Nem">Ne/Nem</option>
+          <option value="Ey/Em">Ey/Em</option>
+          <option value="Other">Other</option>
         </select>
         <br />
         <label htmlFor="headline">Headline:</label>
@@ -112,9 +122,10 @@ const File = () => {
         />
 
         <br />
-
+        <label htmlFor="imageFile">Choose your image</label>
         <input
           type="file"
+          id="imageFile"
           required
           accept="image/*"
           onChange={handleImageChange}
