@@ -8,7 +8,20 @@
   background-color: white;
   padding-bottom: 20px;
 }
-
+.left-container aside {
+  position: absolute;
+  padding: 2px;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 50%;
+  color: rgb(78, 78, 78);
+  border: 1px solid white;
+}
+.left-container aside:hover {
+  color: yellow;
+}
 .left-container h1 {
   padding-top: 57px;
   font-size: 16px;

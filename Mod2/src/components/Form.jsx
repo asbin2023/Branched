@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { handleSubmit } from "../misc/formSlice";
-import background from "../images/background.jpeg";
 import { useNavigate } from "react-router-dom";
 
 const File = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const userInfo = useSelector((state) => state.form);
   const disptach = useDispatch();
 
@@ -49,7 +48,7 @@ const File = () => {
 
   function handleUserFormSubmit(e) {
     e.preventDefault();
-    
+
     disptach(
       handleSubmit({
         name: nameInput,
@@ -57,11 +56,10 @@ const File = () => {
         headline: headlineInput,
         location: locationInput,
         image: image,
-        background: background,
       })
     );
-    navigate('/feed')
-   
+    navigate("/feed");
+
     handleFormReset();
   }
 

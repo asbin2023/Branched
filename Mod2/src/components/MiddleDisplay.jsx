@@ -75,11 +75,12 @@ const MiddleDisplay = () => {
       },
       ...feed,
     ]);
-
+    
     setInput("");
     setImageInput("");
     setImage("");
   }
+
 
   function handleImageChange(e) {
     setImageInput(e.target.files[0]);

@@ -2,8 +2,10 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 import { CiCircleRemove } from "react-icons/ci";
 import "../styles/LeftDisplay.css";
+import { IoMdSwap } from "react-icons/io";
 
 const LeftDisplay = () => {
+  const [randomImage, setRandomImage] = useState(randomImg());
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
   const userData = useSelector((state) => state.form);
@@ -25,6 +27,9 @@ const LeftDisplay = () => {
     setInput("");
     setTodos("");
   }
+  function randomImg() {
+    return `/src/images/bg${Math.floor(Math.random() * (29 - 3 + 1)) + 3}.png`;
+  }
 
   return (
     userData.length > 0 && (
@@ -32,7 +37,7 @@ const LeftDisplay = () => {
         <div className="left-container">
           <img
             className="bg-img"
-            src={userData[0].background}
+            src={randomImage}
             alt="header for the user"
             width={225}
             height={56}
@@ -44,7 +49,9 @@ const LeftDisplay = () => {
             width={72}
             height={72}
           />
-
+          <aside onClick={() => setRandomImage(randomImg())}>
+            <IoMdSwap />
+          </aside>
           <h1>{userData[0].name}</h1>
           <h2>{userData[0].headline}</h2>
         </div>
