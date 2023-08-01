@@ -4,28 +4,44 @@ import { PiSuitcaseSimpleBold } from "react-icons/pi";
 import { BiNews, BiSearch } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
 import "../styles/Navbar.css";
+import { Link } from "react-router-dom";
 
 //IoHomeSharp
 const Navbar = () => {
   return (
     <nav className="navbar-container">
-      <img src={logo} width={54.17} height={34.17} alt="linkedin logo" />
+      <Link to={"/"}>
+        {" "}
+        <img src={logo} width={54.17} height={34.17} alt="linkedin logo" />
+      </Link>
 
       <input type="text" placeholder="&#128269; Search" />
       <ul>
         <div>
-          <BiSearch className="icon glass" />
+          <Link to={"/"}>
+            {" "}
+            <BiSearch className="icon glass" />
+          </Link>
         </div>
         <div>
-          <IoMdHome className="icon" />
+          <Link to={"feed"}>
+            {" "}
+            <IoMdHome className="icon" />
+          </Link>
           <p>Home</p>
         </div>
         <div>
-          <PiSuitcaseSimpleBold className="icon" />
+          <Link>
+            {" "}
+            <PiSuitcaseSimpleBold className="icon" />
+          </Link>
           <p>Jobs</p>
         </div>
         <div>
-          <BiNews className="icon" />
+          <Link to={"feed"}>
+            {" "}
+            <BiNews className="icon" />
+          </Link>
           <p>News</p>
         </div>
         <div>

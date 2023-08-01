@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import "../styles/News.css";
+import { useSelector } from "react-redux";
 
 const News = () => {
+  const userInfo = useSelector((state) => state.form);
   const [news, setNews] = useState([]);
   useEffect(() => {
     // getNews()
@@ -13,32 +15,30 @@ const News = () => {
     const data = await response.json();
     let arr = [];
     for (let item of data.results) {
-      console.log(item.title.length);
-
       arr.push(item);
     }
-    console.log(arr);
-
     setNews(arr);
   }
-  console.log(news);
+
   return (
-    <div className="news-container">
-      <h1>Branched News</h1>
-      <ul>
-        {news.length > 0 &&
-          news.map((item) => {
-            return (
-              <li key={crypto.randomUUID()}>
-                <a href={item.link} rel="noreferrer" target="_blank">
-                  &bull; {item.title}
-                </a>
-                <br /> <br />
-              </li>
-            );
-          })}
-      </ul>
-    </div>
+    userInfo.length > 0 && (
+      <div className="news-container">
+        <h1>Branched News</h1>
+        <ul>
+          {news.length > 0 &&
+            news.map((item) => {
+              return (
+                <li key={crypto.randomUUID()}>
+                  <a href={item.link} rel="noreferrer" target="_blank">
+                    &bull; {item.title}
+                  </a>
+                  <br /> <br />
+                </li>
+              );
+            })}
+        </ul>
+      </div>
+    )
   );
 };
 

@@ -5,7 +5,7 @@ const formSlice = createSlice({
   initialState: [],
   reducers: {
     handleSubmit: (state, action) => {
-      state.push(action.payload);
+      state.unshift(action.payload);
     },
   },
 });
