@@ -16,8 +16,9 @@
   cursor: pointer;
   font-size: 15px;
   border-radius: 50%;
-  color: rgb(78, 78, 78);
+  color: rgb(255, 255, 255);
   border: 1px solid white;
+  background-color: black;
 }
 .left-container aside:hover {
   color: yellow;
@@ -162,6 +163,10 @@
     position: static;
   }
 
+  .left-container aside{
+    top: 155px;
+    right: 10%;
+  }
   .left-container .bg-img {
     width: 100%;
   }
