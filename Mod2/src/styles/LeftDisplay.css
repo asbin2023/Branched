@@ -127,7 +127,6 @@
   .left-container .bg-img {
     width: 200px;
   }
-
 }
 
 @media screen and (max-width: 750px) {
@@ -135,13 +134,12 @@
     width: 200px;
   }
 
-
   .left-container .bg-img {
     width: 200px;
   }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 680px) {
   .main-left-container {
     width: 100%;
     margin-bottom: 20px;

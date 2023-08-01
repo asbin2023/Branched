@@ -7,14 +7,14 @@ const App = () => {
   return (
     <div>
       {/* <Form /> */}
-      
+
       <div className="left-and-middle">
-        
         <LeftDisplay />
-        <MiddleDisplay />
-        <News />
+        <div className="right-side">
+          <MiddleDisplay />
+          <News />
+        </div>
       </div>
-      
     </div>
   );
 };

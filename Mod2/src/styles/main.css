@@ -5,11 +5,13 @@
 }
 
 .left-and-middle {
-  max-width: 1700px;
+  max-width: 2000px;
   display: flex;
   padding: 14%;
   padding-top: 2%;
-
+}
+.right-side {
+  display: inline-flex;
 }
 
 @media screen and (max-width: 1400px) {
@@ -26,16 +28,14 @@
   }
 }
 
-
-
 @media screen and (max-width: 1000px) {
-  .left-and-middle {
-    padding: 3%;
-    padding-top: 2%;
+  .right-side {
+    display: flex;
+    flex-direction: column;
   }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 680px) {
   .left-and-middle {
     padding: 5%;
     flex-direction: column;
