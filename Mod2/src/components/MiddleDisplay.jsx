@@ -8,7 +8,7 @@ import { AiOutlineLike } from "react-icons/ai";
 import { AiFillLike } from "react-icons/ai";
 import { FaRegCommentDots } from "react-icons/fa";
 import { AiOutlineRetweet } from "react-icons/ai";
-import { BiShare } from "react-icons/bi";
+import { BsWikipedia } from "react-icons/bs";
 import { BsTrash3 } from "react-icons/bs";
 
 const MiddleDisplay = () => {
@@ -117,6 +117,10 @@ const MiddleDisplay = () => {
     setImage("");
   }
 
+  function handleWiki(e) {
+    window.open(`https://en.wikipedia.org/wiki/${e}`, "_blank");
+  }
+
   function handleImageChange(e) {
     setImageInput(e.target.files[0]);
     const render = new FileReader();
@@ -222,12 +226,12 @@ const MiddleDisplay = () => {
                         </p>{" "}
                         <p>Repost</p>
                       </div>
-                      <div>
+                      <div onClick={() => handleWiki(item.name)}>
                         <p>
                           {" "}
-                          <BiShare />
+                          <BsWikipedia />
                         </p>{" "}
-                        <p>Share</p>
+                        <p>Wiki</p>
                       </div>
                     </div>
                   </div>
