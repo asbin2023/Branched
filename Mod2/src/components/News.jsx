@@ -6,7 +6,7 @@ const News = () => {
   const userInfo = useSelector((state) => state.form);
   const [news, setNews] = useState([]);
   useEffect(() => {
-    getNews()
+    // getNews()
   }, []);
   async function getNews() {
     const response = await fetch(

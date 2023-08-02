@@ -1,7 +1,10 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { TopicArr } from "../misc/TopicArr";
+import { words } from "../misc/TopicArr";
 
+console.log(words)
 const RandomUsers = () => {
   async function randomSentence() {
     const response = await axios.get(
@@ -14,7 +17,7 @@ const RandomUsers = () => {
     console.log(data);
   }
   useEffect(() => {
-    randomSentence();
+    // randomSentence();
   }, []);
   return (
     <div>
