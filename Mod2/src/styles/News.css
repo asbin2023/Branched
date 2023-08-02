@@ -8,8 +8,7 @@
   margin-left: 300px;
   top: 74px;
   color: black;
-  max-width: 220px;
-  min-width: 200px;
+  min-width: 210px;
   overflow: scroll;
 }
 
@@ -71,13 +70,17 @@
 }
 
 @media screen and (max-width: 680px) {
-    .news-container {
-      width: 100%;
-      margin: 0;
-      margin-top: 30px;
-    }
-    .news-container ul li a {
-     
-        font-size: 12px;
-    }
+  .news-container {
+    width: 100%;
+    margin: 0;
+    margin-top: 30px;
   }
+  .news-container ul li a {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 300px) {
+  .news-container h1 {
+    font-size: 0.9rem;
+  }
+}
