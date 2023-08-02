@@ -45,7 +45,9 @@ const Navbar = () => {
           <p>News</p>
         </div>
         <div>
-          <CgProfile className="icon" />
+          <Link>
+            <CgProfile className="icon" />
+          </Link>
           <p>Me</p>
         </div>
       </ul>

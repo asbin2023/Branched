@@ -7,11 +7,11 @@ import { Route, Routes } from "react-router-dom";
 const App = () => {
   return (
     <div>
+      <RandomUsers />
       <Routes>
         <Route path="/" element={<Form />} />
         <Route path="feed" element={<Feed />} />
       </Routes>
-      <RandomUsers />
     </div>
   );
 };

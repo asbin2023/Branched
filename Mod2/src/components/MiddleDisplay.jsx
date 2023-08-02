@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { HiOutlinePhotograph } from "react-icons/hi";
 import { GrPowerReset } from "react-icons/gr";
 import "../styles/MiddleDisplay.css";
@@ -13,10 +13,46 @@ import { BsTrash3 } from "react-icons/bs";
 
 const MiddleDisplay = () => {
   const userInfo = useSelector((state) => state.form);
+  const quote = useSelector((state) => state.quote);
   const [input, setInput] = useState("");
-  const [feed, setFeed] = useState([]);
   const [image, setImage] = useState("");
   const [imageInput, setImageInput] = useState("");
+
+  let tempQuotes = [];
+
+  async function getImage() {
+    const res = await fetch("https://randomuser.me/api");
+    const data = await res.json();
+    let imgg = data.results[0].picture.large;
+    console.log(imgg);
+    return imgg;
+  }
+
+  useEffect(() => {
+    if (quote) {
+      (async () => {
+        let tempQuotes = [];
+
+        for (let i = 0; i < quote.length; i++) {
+          let temp = await getImage(); // Wait for the image to be fetched
+          tempQuotes.push({
+            id: crypto.randomUUID(),
+            content: quote[i].quote,
+            image: image,
+            name: quote[i].author,
+            headline: `Master of`,
+            profilePic: temp,
+            date: randomTime(),
+            liked: false,
+          });
+        }
+
+        setFeed(tempQuotes);
+      })();
+    }
+  }, [quote]);
+
+  const [feed, setFeed] = useState(tempQuotes);
 
   function handleInputChange(e) {
     setInput(e.target.value);
@@ -75,12 +111,11 @@ const MiddleDisplay = () => {
       },
       ...feed,
     ]);
-    
+
     setInput("");
     setImageInput("");
     setImage("");
   }
-
 
   function handleImageChange(e) {
     setImageInput(e.target.files[0]);

@@ -50,8 +50,8 @@ a {
   margin-left: 14%;
 }
 .navbar-container ul div .icon {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
 }
 .navbar-container ul div .icon:hover {
   transition: 0.15s ease-in-out;
