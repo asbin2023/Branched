@@ -13,10 +13,10 @@ export const TopicArr = [
   "change",
   "communications",
   "computers",
-  "cool",
+
   "courage",
   "dad",
-  "dating",
+
   "death",
   "design",
   "dreams",
@@ -32,28 +32,27 @@ export const TopicArr = [
   "forgiveness",
   "freedom",
   "friendship",
-  "funny",
+
   "future",
-  "god",
+
   "good",
-  "government",
+
   "graduation",
   "great",
   "happiness",
   "health",
   "home",
-  "humor",
+
   "imagination",
   "inspirational",
   "intelligence",
-  "jealousy",
+
   "knowledge",
   "learning",
   "life",
-  "love",
-  "marriage",
+
   "medical",
-  "mom",
+
   "money",
   "morning",
   "movies",
@@ -77,4 +76,4 @@ for (let i = 0; i < 10; i++) {
   }
 }
 
-export {words}
+export { words };
