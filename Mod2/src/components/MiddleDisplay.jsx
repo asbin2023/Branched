@@ -24,7 +24,6 @@ const MiddleDisplay = () => {
     const res = await fetch("https://randomuser.me/api");
     const data = await res.json();
     let imgg = data.results[0].picture.large;
-    console.log(imgg);
     return imgg;
   }
 
@@ -32,15 +31,16 @@ const MiddleDisplay = () => {
     if (quote) {
       (async () => {
         let tempQuotes = [];
-
         for (let i = 0; i < quote.length; i++) {
+          let capitalized =
+            quote[i].headline[0].toUpperCase() + quote[i].headline.slice(1);
           let temp = await getImage(); // Wait for the image to be fetched
           tempQuotes.push({
             id: crypto.randomUUID(),
             content: quote[i].quote,
             image: image,
             name: quote[i].author,
-            headline: `Master of`,
+            headline: capitalized,
             profilePic: temp,
             date: randomTime(),
             liked: false,

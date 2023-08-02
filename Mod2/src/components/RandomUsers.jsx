@@ -20,7 +20,7 @@ const RandomUsers = () => {
       const data = await response.data;
 
       data.length > 0
-        ? tempArr.push({ author: data[0].author, quote: data[0].quote })
+        ? tempArr.push({ author: data[0].author, quote: data[0].quote, headline: `${words[i]} Guru` })
         : null;
     }
     setQuotes(tempArr);
