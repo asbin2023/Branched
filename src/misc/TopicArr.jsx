@@ -60,20 +60,9 @@ export const TopicArr = [
 ];
 
 let words = [];
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < 30; i++) {
   let num = Math.floor(Math.random() * TopicArr.length);
-
-  if (!words.includes(TopicArr[num])) {
-    words.push(TopicArr[num]);
-  } else {
-    if (!words.includes(TopicArr[num + 1])) {
-      words.push(TopicArr[num + 1]);
-    } else {
-      if (!words.includes(TopicArr[num + 2])) {
-        words.push(TopicArr[num + 2]);
-      }
-    }
-  }
+  words.push(TopicArr[num]);
 }
 
 export { words };

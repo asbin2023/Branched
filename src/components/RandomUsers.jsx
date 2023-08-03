@@ -11,7 +11,7 @@ const RandomUsers = () => {
   const [quotes, setQuotes] = useState();
   async function randomSentence() {
     let apiKey = import.meta.env.VITE_APP_RANDOM_USERS_API_KEY;
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 30; i++) {
       const response = await axios.get(
         `https://api.api-ninjas.com/v1/quotes?category=${words[i]}`,
         {
