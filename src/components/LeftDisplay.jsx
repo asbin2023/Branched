@@ -3,8 +3,10 @@ import { useState } from "react";
 import { CiCircleRemove } from "react-icons/ci";
 import "../styles/LeftDisplay.css";
 import { IoMdSwap } from "react-icons/io";
+import randomImgArr from "../misc/randomImages";
 
 const LeftDisplay = () => {
+  console.log(randomImg());
   const [randomImage, setRandomImage] = useState(randomImg());
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
@@ -28,7 +30,9 @@ const LeftDisplay = () => {
     setTodos("");
   }
   function randomImg() {
-    return `src/images/bg${Math.floor(Math.random() * (29 - 3 + 1)) + 3}.png`;
+    let num = Math.floor(Math.random() * 20);
+
+    return randomImgArr[num];
   }
 
   return (
