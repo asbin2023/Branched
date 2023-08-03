@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { handleSubmit } from "../misc/formSlice";
 import { useNavigate } from "react-router-dom";
 import "../styles/Form.css";
-import hero from '../images/svgg.svg'
+import hero from "../images/svgg.svg";
 
 const File = () => {
   const navigate = useNavigate();
@@ -16,12 +16,22 @@ const File = () => {
   const [selectedInput, setSelectedInput] = useState("");
   const [locationInput, setLocationInput] = useState("Denver, Colorado");
   const [image, setImage] = useState("");
+  const [headerInput, setHeaderInput] = useState("");
+  const [header, setHeader] = useState("");
 
   function handleImageChange(e) {
     setImageInput(e.target.files[0]);
     const render = new FileReader();
     render.onloadend = () => {
       setImage(render.result);
+    };
+    render.readAsDataURL(e.target.files[0]);
+  }
+  function handleHeaderChange(e) {
+    setHeaderInput(e.target.files[0]);
+    const render = new FileReader();
+    render.onloadend = () => {
+      setHeader(render.result);
     };
     render.readAsDataURL(e.target.files[0]);
   }
@@ -33,6 +43,8 @@ const File = () => {
     setSelectedInput("");
     setLocationInput("");
     setImage("");
+    setHeader("");
+    setHeaderInput("");
   }
 
   function handleNameChange(e) {
@@ -50,6 +62,8 @@ const File = () => {
 
   function handleUserFormSubmit(e) {
     e.preventDefault();
+    !header &&
+      alert("Since you didn't submit a header, it will be provided to you.");
 
     disptach(
       handleSubmit({
@@ -58,6 +72,7 @@ const File = () => {
         headline: headlineInput,
         location: locationInput,
         image: image,
+        header: header,
       })
     );
     navigate("/feed");
@@ -124,13 +139,21 @@ const File = () => {
           />
 
           <br />
-          <label htmlFor="imageFile">Choose your image</label>
+          <label htmlFor="imageFile">Choose your profile picture:</label>
           <input
             type="file"
             id="imageFile"
             required
             accept="image/*"
             onChange={handleImageChange}
+          />
+          <br />
+          <label htmlFor="headerFile">Choose your header (optional):</label>
+          <input
+            type="file"
+            id="headerFile"
+            accept="image/*"
+            onChange={handleHeaderChange}
           />
           <br />
           <button type="submit">Submit</button>

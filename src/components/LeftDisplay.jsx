@@ -34,7 +34,6 @@ import {
 } from "../misc/imageImp";
 
 const LeftDisplay = () => {
-  console.log(randomImg());
   const [randomImage, setRandomImage] = useState(randomImg());
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
@@ -97,7 +96,7 @@ const LeftDisplay = () => {
         <div className="left-container">
           <img
             className="bg-img"
-            src={randomImage}
+            src={userData[0].header ? userData[0].header : randomImage}
             alt="header for the user"
             width={225}
             height={56}
@@ -109,9 +108,11 @@ const LeftDisplay = () => {
             width={72}
             height={72}
           />
-          <aside onClick={() => setRandomImage(randomImg())}>
-            <IoMdSwap />
-          </aside>
+          {!userData[0].header && (
+            <aside onClick={() => setRandomImage(randomImg())}>
+              <IoMdSwap />
+            </aside>
+          )}
           <h1>{userData[0].name}</h1>
           <h2>{userData[0].headline}</h2>
         </div>

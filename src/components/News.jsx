@@ -6,7 +6,7 @@ const News = () => {
   const userInfo = useSelector((state) => state.form);
   const [news, setNews] = useState([]);
   useEffect(() => {
-    getNews();
+    // getNews();
   }, []);
   async function getNews() {
     let apiKey = import.meta.env.VITE_APP_NEWS_API_KEY;
