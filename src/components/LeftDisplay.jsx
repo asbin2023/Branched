@@ -3,7 +3,35 @@ import { useState } from "react";
 import { CiCircleRemove } from "react-icons/ci";
 import "../styles/LeftDisplay.css";
 import { IoMdSwap } from "react-icons/io";
-import randomImgArr from "../misc/randomImages";
+import {
+  bg3,
+  bg4,
+  bg5,
+  bg6,
+  bg7,
+  bg8,
+  bg9,
+  bg10,
+  bg11,
+  bg12,
+  bg13,
+  bg14,
+  bg15,
+  bg16,
+  bg17,
+  bg18,
+  bg19,
+  bg20,
+  bg21,
+  bg22,
+  bg23,
+  bg24,
+  bg25,
+  bg26,
+  bg27,
+  bg28,
+  bg29,
+} from "../misc/imageImp";
 
 const LeftDisplay = () => {
   console.log(randomImg());
@@ -30,9 +58,37 @@ const LeftDisplay = () => {
     setTodos("");
   }
   function randomImg() {
-    let num = Math.floor(Math.random() * 20);
-
-    return randomImgArr[num];
+    const imgs = [
+      bg3,
+      bg4,
+      bg5,
+      bg6,
+      bg7,
+      bg8,
+      bg9,
+      bg10,
+      bg11,
+      bg12,
+      bg13,
+      bg14,
+      bg15,
+      bg16,
+      bg17,
+      bg18,
+      bg19,
+      bg20,
+      bg21,
+      bg22,
+      bg23,
+      bg24,
+      bg25,
+      bg26,
+      bg27,
+      bg28,
+      bg29,
+    ];
+    let num = Math.floor(Math.random() * imgs.length);
+    return imgs[num];
   }
 
   return (
