@@ -14,10 +14,14 @@ const File = () => {
   const [nameInput, setNameInput] = useState("");
   const [headlineInput, setHeadlineInput] = useState("");
   const [selectedInput, setSelectedInput] = useState("");
-  const [locationInput, setLocationInput] = useState("Denver, Colorado");
+  const [locationInput, setLocationInput] = useState(
+    "Denver, Colorado, United States "
+  );
   const [image, setImage] = useState("");
   const [headerInput, setHeaderInput] = useState("");
   const [header, setHeader] = useState("");
+  const [jobInput, setJobInput] = useState("");
+  const [schoolInput, setSchoolInput] = useState("");
 
   function handleImageChange(e) {
     setImageInput(e.target.files[0]);
@@ -45,10 +49,15 @@ const File = () => {
     setImage("");
     setHeader("");
     setHeaderInput("");
+    setJobInput("");
+    setSchoolInput("");
   }
 
   function handleNameChange(e) {
     setNameInput(e.target.value);
+  }
+  function handleJobChange(e) {
+    setJobInput(e.target.value);
   }
   function handleSelectedInputChange(e) {
     setSelectedInput(e.target.value);
@@ -58,6 +67,9 @@ const File = () => {
   }
   function handleLocationChange(e) {
     setLocationInput(e.target.value);
+  }
+  function handleSchoolChange(e) {
+    setSchoolInput(e.target.value);
   }
 
   function handleUserFormSubmit(e) {
@@ -73,6 +85,8 @@ const File = () => {
         location: locationInput,
         image: image,
         header: header,
+        job: jobInput,
+        school: schoolInput,
       })
     );
     navigate("/feed");
@@ -136,6 +150,24 @@ const File = () => {
             required
             type="text"
             id="location"
+          />
+          <br />
+
+          <label htmlFor="job">Occupation:</label>
+          <input
+            onChange={handleJobChange}
+            value={jobInput}
+            type="text"
+            id="job"
+          />
+          <br />
+
+          <label htmlFor="school">Education:</label>
+          <input
+            onChange={handleSchoolChange}
+            value={schoolInput}
+            type="text"
+            id="school"
           />
 
           <br />

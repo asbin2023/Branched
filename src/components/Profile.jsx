@@ -5,9 +5,11 @@ import "../styles/Profile.css";
 const Profile = () => {
   let userInfo = useSelector((state) => state.form);
   return (
-    <div>
-      <img src={''} alt="" />
-    </div>
+    userInfo[0] && (
+      <div>
+        <img src={userInfo[0].header} alt="header image" />
+      </div>
+    )
   );
 };
 

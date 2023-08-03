@@ -1,6 +1,6 @@
 .form-display {
   padding-top: 70px;
-
+  background-color: white;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -9,7 +9,7 @@
 }
 .form-display form {
   display: flex;
-  height: 700px;
+
   width: 100%;
   flex-direction: column;
 
@@ -18,10 +18,11 @@
 
 .form-display form input,
 .form-display form select {
-  height: 30px;
+  height: 40px;
   width: 50%;
   outline: none;
   padding-left: 8px;
+  padding-right: 8px;
 }
 
 .form-display form input[type="file"]::file-selector-button {
@@ -72,25 +73,27 @@
 .hero-img {
   background-color: transparent;
   width: 630px;
-  position: absolute;
-  top: 135px;
-  right: 10%;
+  position: fixed;
+  top: 200px;
+  right: 20%;
+  overflow: hidden;
 }
-
 .form-main {
   background-color: white;
   position: relative;
-  height: 100vh;
-  max-width: 1600px;
+  height: 1050px;
+  max-width: 2500px;
+  background-color: white;
+  overflow-x: hidden;
 }
 .form-display h1 {
-  font-size: 32px;
+  font-size: 34px;
 }
 
 @media screen and (max-width: 1400px) {
   .hero-img {
     width: 590px;
-    top: 145px;
+
     right: 8%;
   }
 }
@@ -101,7 +104,7 @@
   }
   .hero-img {
     width: 540px;
-    top: 160px;
+
     right: 6%;
   }
 }
