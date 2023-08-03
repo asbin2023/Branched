@@ -6,11 +6,12 @@ const News = () => {
   const userInfo = useSelector((state) => state.form);
   const [news, setNews] = useState([]);
   useEffect(() => {
-    // getNews()
+    getNews();
   }, []);
   async function getNews() {
+    let apiKey = import.meta.env.VITE_APP_NEWS_API_KEY;
     const response = await fetch(
-      `https://newsdata.io/api/1/news?apikey=pub_269947ac696999a0b17c8127a9edb2a2980b4&language=en&q=revenu&country=us`
+      `https://newsdata.io/api/1/news?apikey=${apiKey}&q=revenu&country=us`
     );
     const data = await response.json();
     let arr = [];

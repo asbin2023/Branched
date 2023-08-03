@@ -10,17 +10,22 @@ const RandomUsers = () => {
   const dispatch = useDispatch();
   const [quotes, setQuotes] = useState();
   async function randomSentence() {
+    let apiKey = import.meta.env.VITE_APP_RANDOM_USERS_API_KEY;
     for (let i = 0; i < 10; i++) {
       const response = await axios.get(
         `https://api.api-ninjas.com/v1/quotes?category=${words[i]}`,
         {
-          headers: { "X-Api-Key": "sLMPkjpKJEaY4m4wUfuduA==jrkx9E4YMD8JkjaS" },
+          headers: { "X-Api-Key": apiKey },
         }
       );
       const data = await response.data;
 
       data.length > 0
-        ? tempArr.push({ author: data[0].author, quote: data[0].quote, headline: `${words[i]} Guru` })
+        ? tempArr.push({
+            author: data[0].author,
+            quote: data[0].quote,
+            headline: `${words[i]} Guru`,
+          })
         : null;
     }
     setQuotes(tempArr);
