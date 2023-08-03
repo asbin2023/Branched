@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { handleSubmit } from "../misc/formSlice";
 import { useNavigate } from "react-router-dom";
 import "../styles/Form.css";
+import hero from '../images/svgg.svg'
 
 const File = () => {
   const navigate = useNavigate();
@@ -138,7 +139,7 @@ const File = () => {
           </button>
         </form>
       </div>
-      <img className="hero-img" src="src/images/svgg.svg" alt="" />
+      <img className="hero-img" src={hero} alt="" />
     </div>
   );
 };
