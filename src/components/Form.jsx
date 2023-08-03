@@ -121,15 +121,15 @@ const File = () => {
             <option value="" hidden>
               Please select
             </option>
-            <option value="She/Her">She/Her</option>
-            <option value="He/Him">He/Him</option>
-            <option value="They/Them">They/Them</option>
-            <option value="Ze/Zir">Ze/Zir</option>
-            <option value="Xe/Xem">Xe/Xem</option>
-            <option value="Ve/Ver">Ve/Ver</option>
-            <option value="Ne/Nem">Ne/Nem</option>
-            <option value="Ey/Em">Ey/Em</option>
-            <option value="Other">Other</option>
+            <option value="She/Her">(She/Her)</option>
+            <option value="He/Him">(He/Him)</option>
+            <option value="They/Them">(They/Them)</option>
+            <option value="Ze/Zir">(Ze/Zir)</option>
+            <option value="Xe/Xem">(Xe/Xem)</option>
+            <option value="Ve/Ver">(Ve/Ver)</option>
+            <option value="Ne/Nem">(Ne/Nem)</option>
+            <option value="Ey/Em">(Ey/Em)</option>
+            <option value="Other">(Other)</option>
           </select>
           <br />
           <label htmlFor="headline">Headline:</label>

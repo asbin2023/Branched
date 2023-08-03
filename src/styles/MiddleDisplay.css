@@ -49,7 +49,7 @@
 
 .middle-three button,
 .middle-three label {
-  font-weight: bold;
+  font-weight: 600;
   font-size: 14px;
   color: rgb(95, 94, 94);
   background-color: transparent;
@@ -109,12 +109,12 @@
 
 .first-post-card div h1 {
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .first-post-card div h2 {
   font-size: 12px;
-  font-weight: 100;
+  font-weight: 400;
   color: rgba(0, 0, 0, 0.6);
 }
 

@@ -1,0 +1,78 @@
+.profile-main {
+  width: 804px;
+  position: relative;
+  background-color: white;
+  margin: 30px 0px 0px 100px;
+  padding-bottom: 50px;
+  border-radius: 10px;
+}
+.profile-first .header {
+  height: 201px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.profile-first .profile-pic {
+  height: 152px;
+  width: 152px;
+  border-radius: 50%;
+  border: 3px solid white;
+  position: absolute;
+  top: 100px;
+  left: 30px;
+}
+
+.profile-second .left {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-second .left .name {
+  gap: 5px;
+  display: flex;
+  align-items: center;
+}
+.profile-second .left .name h1 {
+  font-weight: 700;
+  font-size: 24px;
+}
+.profile-second .left .name p {
+  font-size: 14px;
+  font-weight: 400;
+}
+.profile-second .left h2 {
+  font-size: 16px;
+  margin-bottom: 6px;
+  font-weight: 400;
+}
+.profile-second .left h3 {
+  font-size: 14px;
+  font-weight: 400;
+  color: gray;
+}
+
+.profile-second .right .jobs,
+.profile-second .right .school {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.profile-second .right .jobs h2,
+.profile-second .right .school h2 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.profile-second .right {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-second {
+  padding-top: 70px;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-around;
+  gap: 20%;
+}
