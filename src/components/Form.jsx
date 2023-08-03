@@ -138,7 +138,7 @@ const File = () => {
           </button>
         </form>
       </div>
-      <img className="hero-img" src="/src/images/svgg.svg" alt="" />
+      <img className="hero-img" src="src/images/svgg.svg" alt="" />
     </div>
   );
 };

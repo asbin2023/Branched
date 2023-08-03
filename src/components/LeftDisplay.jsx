@@ -28,7 +28,7 @@ const LeftDisplay = () => {
     setTodos("");
   }
   function randomImg() {
-    return `./src/images/bg${Math.floor(Math.random() * (29 - 3 + 1)) + 3}.png`;
+    return `src/images/bg${Math.floor(Math.random() * (29 - 3 + 1)) + 3}.png`;
   }
 
   return (
