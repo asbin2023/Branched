@@ -12,7 +12,7 @@ const Navbar = () => {
     <nav className="navbar-container">
       <Link to={"/"}>
         {" "}
-        <img src={logo} width={54.17} height={34.17} alt="linkedin logo" />
+        <img src={logo} width={40.17} height={30.17} alt="linkedin logo" />
       </Link>
 
       <input type="text" placeholder="&#128269; Search" />

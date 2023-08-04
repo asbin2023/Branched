@@ -10,9 +10,9 @@ a {
 .navbar-container {
   background-color: rgb(255, 255, 255);
   display: flex;
-  margin-top: 10px;
+
   align-items: center;
-  padding: 0px 100px 10px 30px;
+  padding: 7px 100px 5px 30px;
   width: 100%;
   top: 0;
   position: sticky;
@@ -25,7 +25,7 @@ a {
 .navbar-container input {
   outline: none;
   background-color: #eef3f7;
-  height: 32px;
+  height: 25px;
   width: 800px;
   font-size: 18px;
   border-radius: 7px;
@@ -42,7 +42,7 @@ a {
 }
 .navbar-container ul div .icon {
   width: 25px;
-  height: 25px;
+  height: 20px;
 }
 .navbar-container ul div .icon:hover {
   transition: 0.15s ease-in-out;
@@ -51,7 +51,7 @@ a {
 .navbar-container ul div {
   cursor: pointer;
   color: #5e5d5d;
-  height: 43px;
+  height: 4px;
   width: 82px;
   display: flex;
   flex-direction: column;
@@ -73,9 +73,7 @@ a {
   .navbar-container img {
     margin-right: 1px;
   }
-  .navbar-container {
-    margin-top: 10px;
-  }
+
   .navbar-container .glass {
     display: block;
   }

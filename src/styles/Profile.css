@@ -42,7 +42,7 @@
 }
 .profile-second .left h2 {
   font-size: 16px;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
   font-weight: 400;
 }
 .profile-second .left h3 {
@@ -60,7 +60,7 @@
 .profile-second .right .jobs h2,
 .profile-second .right .school h2 {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .profile-second .right {
@@ -69,10 +69,18 @@
 }
 
 .profile-second {
+  padding: 0px 24px;
   padding-top: 70px;
   width: 100%;
-
   display: flex;
-  justify-content: space-around;
-  gap: 20%;
+  justify-content: space-between;
+}
+
+.about-me {
+  width: 804px;
+  background-color: white;
+  margin: 20px 0px 0px 100px;
+  padding: 20px 24px;
+  padding-bottom: 100px;
+  border-radius: 10px;
 }
