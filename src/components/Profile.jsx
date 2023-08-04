@@ -1,11 +1,91 @@
-import React from "react";
 import { useSelector } from "react-redux";
 import "../styles/Profile.css";
+import { useState } from "react";
 import { PiSuitcaseSimpleBold } from "react-icons/pi";
 import { IoMdSchool } from "react-icons/io";
+import { BsPencil } from "react-icons/bs";
+import { AiOutlineClose } from "react-icons/ai";
+import { IoMdSwap } from "react-icons/io";
+import {
+  bg3,
+  bg4,
+  bg5,
+  bg6,
+  bg7,
+  bg8,
+  bg9,
+  bg10,
+  bg11,
+  bg12,
+  bg13,
+  bg14,
+  bg15,
+  bg16,
+  bg17,
+  bg18,
+  bg19,
+  bg20,
+  bg21,
+  bg22,
+  bg23,
+  bg24,
+  bg25,
+  bg26,
+  bg27,
+  bg28,
+  bg29,
+} from "../misc/imageImp";
 
 const Profile = () => {
+  const [about, setAbout] = useState("");
+  const [randomImage, setRandomImage] = useState(randomImg());
+  const [input, setInput] = useState("");
   let userInfo = useSelector((state) => state.form);
+
+  function randomImg() {
+    const imgs = [
+      bg3,
+      bg4,
+      bg5,
+      bg6,
+      bg7,
+      bg8,
+      bg9,
+      bg10,
+      bg11,
+      bg12,
+      bg13,
+      bg14,
+      bg15,
+      bg16,
+      bg17,
+      bg18,
+      bg19,
+      bg20,
+      bg21,
+      bg22,
+      bg23,
+      bg24,
+      bg25,
+      bg26,
+      bg27,
+      bg28,
+      bg29,
+    ];
+    let num = Math.floor(Math.random() * imgs.length);
+    return imgs[num];
+  }
+
+  function handleInputChange(e) {
+    setInput(e.target.value);
+  }
+  function handleSubmit(e) {
+    e.preventDefault();
+    setAbout(input);
+  }
+  function handleClear() {
+    setInput("");
+  }
   return (
     userInfo[0] && (
       <div>
@@ -13,9 +93,14 @@ const Profile = () => {
           <div className="profile-first">
             <img
               className="header"
-              src={userInfo[0].header}
+              src={userInfo[0].header ? userInfo[0].header : randomImage}
               alt="header image"
             />
+            {!userInfo[0].header && (
+              <aside onClick={() => setRandomImage(randomImg())}>
+                <IoMdSwap />
+              </aside>
+            )}
             <img
               className="profile-pic"
               src={userInfo[0].image}
@@ -44,10 +129,48 @@ const Profile = () => {
           </div>
         </div>
         <div className="about-me">
-          <form>
-            <label>About</label>
-            <p>This is your about me: </p>
-          </form>
+          <div className="abt-me-1">
+            <h2>About</h2>
+            <span>
+              <BsPencil />
+            </span>
+            <p>{about}</p>
+          </div>
+          <div className="abt-me-2">
+            <h3>Edit about</h3>
+            <span className="close">
+              {" "}
+              <AiOutlineClose />
+            </span>
+            <form onSubmit={handleSubmit} action="">
+              <label htmlFor="edit">
+                You can write about your years of experience, industry, or
+                skills. People also talk about their achievements or previous
+                job experiences.
+              </label>
+              <textarea
+                value={input}
+                onChange={handleInputChange}
+                rows={11}
+                maxLength={2600}
+              />
+              <p> {input.length}/2,600</p>
+              <hr />
+              <div>
+                <button
+                  onClick={handleClear}
+                  className="clear-btn"
+                  type="reset"
+                >
+                  Clear
+                </button>
+
+                <button className="submit-btn" type="submit">
+                  Save
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     )

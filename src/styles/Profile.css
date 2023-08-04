@@ -11,6 +11,21 @@
   width: 100%;
   border-radius: 10px;
 }
+.profile-first {
+  position: relative;
+}
+.profile-first aside {
+  position: absolute;
+  padding: 2px;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 50%;
+  color: rgb(255, 255, 255);
+  border: 1px solid white;
+  background-color: black;
+}
 
 .profile-first .profile-pic {
   height: 152px;
@@ -57,6 +72,9 @@
   align-items: center;
   gap: 4px;
 }
+.profile-second .right .jobs {
+  margin-bottom: 10px;
+}
 .profile-second .right .jobs h2,
 .profile-second .right .school h2 {
   font-size: 14px;
@@ -83,4 +101,52 @@
   padding: 20px 24px;
   padding-bottom: 100px;
   border-radius: 10px;
+}
+.abt-me-1 {
+  border: 1px solid green;
+  position: relative;
+}
+.abt-me-1 span {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.abt-me-2 {
+  width: 680px;
+  border: 1px solid red;
+  position: relative;
+}
+
+.abt-me-2 h3 {
+  padding: 16px 48px 16px 24px;
+}
+.abt-me-2 .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 16px 48px 16px 24px;
+  font-size: 20px;
+}
+.abt-me-2 form {
+  width: 680px;
+  height: 483px;
+  padding: 16px 24px;
+}
+.abt-me-2 form textarea {
+  width: 632px;
+  height: 231px;
+  padding: 6px 8px;
+  resize: none;
+  outline: none;
+}
+.abt-me-2 form p {
+  text-align: right;
+}
+.abt-me-2 form div {
+  text-align: right;
+  padding: 10px;
+
+  cursor: pointer;
 }
