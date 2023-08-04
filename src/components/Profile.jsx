@@ -38,6 +38,10 @@ import {
 
 const Profile = () => {
   const [about, setAbout] = useState("");
+  about.length === 0 &&
+    setAbout(
+      "This is your about section. Click on the edit (pencil) button on the right to modify!"
+    );
   const [randomImage, setRandomImage] = useState(randomImg());
   const [input, setInput] = useState(about);
   const [displayToggle, setDisplayToggle] = useState(false);
@@ -84,7 +88,6 @@ const Profile = () => {
     e.preventDefault();
     setAbout(input);
     setDisplayToggle(false);
-   
   }
   function handleClear() {
     setInput("");
