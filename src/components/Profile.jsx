@@ -39,7 +39,8 @@ import {
 const Profile = () => {
   const [about, setAbout] = useState("");
   const [randomImage, setRandomImage] = useState(randomImg());
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState(about);
+  const [displayToggle, setDisplayToggle] = useState(false);
   let userInfo = useSelector((state) => state.form);
 
   function randomImg() {
@@ -82,13 +83,23 @@ const Profile = () => {
   function handleSubmit(e) {
     e.preventDefault();
     setAbout(input);
+    setDisplayToggle(false);
+   
   }
   function handleClear() {
     setInput("");
   }
+  function handleToggle() {
+    console.log("disp");
+    setDisplayToggle(true);
+  }
+  function handleCloseToggle() {
+    setDisplayToggle(false);
+  }
+
   return (
     userInfo[0] && (
-      <div>
+      <div className="main-div-main">
         <div className="profile-main">
           <div className="profile-first">
             <img
@@ -131,17 +142,23 @@ const Profile = () => {
         <div className="about-me">
           <div className="abt-me-1">
             <h2>About</h2>
-            <span>
+            <span onClick={handleToggle}>
               <BsPencil />
             </span>
             <p>{about}</p>
           </div>
-          <div className="abt-me-2">
-            <h3>Edit about</h3>
-            <span className="close">
-              {" "}
-              <AiOutlineClose />
-            </span>
+          <div
+            style={{ display: displayToggle ? "block" : "none" }}
+            className="abt-me-2"
+          >
+            <h3>
+              Edit about
+              <span className="close" onClick={handleCloseToggle}>
+                {" "}
+                <AiOutlineClose />
+              </span>
+            </h3>
+
             <form onSubmit={handleSubmit} action="">
               <label htmlFor="edit">
                 You can write about your years of experience, industry, or
@@ -155,7 +172,7 @@ const Profile = () => {
                 maxLength={2600}
               />
               <p> {input.length}/2,600</p>
-              <hr />
+
               <div>
                 <button
                   onClick={handleClear}
