@@ -2,6 +2,7 @@ import logo from "../images/logo.png";
 import { IoMdHome } from "react-icons/io";
 import { PiSuitcaseSimpleBold } from "react-icons/pi";
 import { BiNews, BiSearch } from "react-icons/bi";
+import { MdOutlineLogout } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import "../styles/Navbar.css";
 import { Link } from "react-router-dom";
@@ -13,7 +14,7 @@ const Navbar = () => {
   }
   return (
     <nav className="navbar-container">
-      <Link  to={"/"}>
+      <Link to={"/"}>
         {" "}
         <img src={logo} width={40.17} height={30.17} alt="linkedin logo" />
       </Link>
@@ -59,7 +60,7 @@ const Navbar = () => {
         <div>
           <Link onClick={handleRefresh} to={"/"}>
             {" "}
-            <PiSuitcaseSimpleBold className="icon" />
+            <MdOutlineLogout className="icon" />
           </Link>
           <Link onClick={handleRefresh} to={"/"}>
             {" "}

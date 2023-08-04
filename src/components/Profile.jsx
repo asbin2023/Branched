@@ -131,14 +131,18 @@ const Profile = () => {
               <h3>{userInfo[0].location}</h3>
             </div>
             <div className="right">
-              <div className="jobs">
-                <PiSuitcaseSimpleBold />
-                <h2> {userInfo[0].job}</h2>
-              </div>
-              <div className="school">
-                <IoMdSchool />
-                <h2>{userInfo[0].school}</h2>
-              </div>
+              {userInfo[0].job && (
+                <div className="jobs">
+                  <PiSuitcaseSimpleBold />
+                  <h2> {userInfo[0].job}</h2>
+                </div>
+              )}
+              {userInfo[0].school && (
+                <div className="school">
+                  <IoMdSchool />
+                  <h2>{userInfo[0].school}</h2>
+                </div>
+              )}
             </div>
           </div>
         </div>

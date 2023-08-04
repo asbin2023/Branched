@@ -32,7 +32,7 @@ const RandomUsers = () => {
   }
 
   useEffect(() => {
-    // randomSentence();
+    randomSentence();
   }, []);
 
   useEffect(() => {
