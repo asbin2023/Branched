@@ -8,9 +8,12 @@ import { Link } from "react-router-dom";
 
 //IoHomeSharp
 const Navbar = () => {
+  function handleRefresh() {
+    window.localStorage.reload(true);
+  }
   return (
     <nav className="navbar-container">
-      <Link to={"/"}>
+      <Link  to={"/"}>
         {" "}
         <img src={logo} width={40.17} height={30.17} alt="linkedin logo" />
       </Link>
@@ -28,27 +31,40 @@ const Navbar = () => {
             {" "}
             <IoMdHome className="icon" />
           </Link>
-          <p>Home</p>
-        </div>
-        <div>
-          <Link>
+          <Link to={"feed"}>
             {" "}
-            <PiSuitcaseSimpleBold className="icon" />
+            <p>Home</p>
           </Link>
-          <p>Jobs</p>
         </div>
+
         <div>
           <Link to={"feed"}>
             {" "}
             <BiNews className="icon" />
           </Link>
-          <p>News</p>
+          <Link to={"feed"}>
+            {" "}
+            <p>News</p>
+          </Link>
         </div>
         <div>
-          <Link to={'profile'}>
+          <Link to={"profile"}>
             <CgProfile className="icon" />
           </Link>
-          <p>Me</p>
+          <Link to={"profile"}>
+            {" "}
+            <p>Me</p>
+          </Link>
+        </div>
+        <div>
+          <Link onClick={handleRefresh} to={"/"}>
+            {" "}
+            <PiSuitcaseSimpleBold className="icon" />
+          </Link>
+          <Link onClick={handleRefresh} to={"/"}>
+            {" "}
+            <p>Logout</p>
+          </Link>
         </div>
       </ul>
     </nav>
