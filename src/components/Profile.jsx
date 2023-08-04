@@ -192,6 +192,12 @@ const Profile = () => {
             </form>
           </div>
         </div>
+        <div className="smaller-screen">
+          <p>
+            {" "}
+            About section is not available on screen sizes less than 800px{" "}
+          </p>
+        </div>
       </div>
     )
   );
